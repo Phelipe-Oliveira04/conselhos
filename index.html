@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conselhos Aleatórios</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #6dd5ed, #2193b0);
+      }
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+      }
+      h2 {
+        color: #2193b0;
+      }
+      button {
+        background: #2193b0;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: background 0.3s;
+      }
+      button:hover {
+        background: #176c80;
+      }
+      @media (max-width: 500px) {
+        .card {
+          padding: 10px;
+          border-radius: 8px;
+          max-width: 95vw;
+          font-size: 1rem;
+        }
+        h2 {
+          font-size: 1.2rem;
+        }
+        button {
+          padding: 8px 12px;
+          font-size: 1rem;
+        }
+        body {
+          padding: 10px;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>💡 Conselho do Dia</h2>
+      <p id="conselho">Clique no botão para receber um conselho</p>
+      <button onclick="gerarConselho()">Gerar Conselho</button>
+    </div>
+
+    <script>
+      // "Banco de dados" de conselhos
+      const conselhos = [
+        "Acredite mais em você.",
+        "Nunca pare de aprender.",
+        "Organize seu tempo com sabedoria.",
+        "Seja persistente, mas saiba descansar.",
+        "A disciplina supera a motivação.",
+        "Pequenos passos levam a grandes conquistas.",
+        "O erro é parte do aprendizado.",
+        "Foque no que você pode controlar.",
+        "Seja paciente, tudo tem seu tempo.",
+        "Ajude alguém hoje, nem que seja com um sorriso.",
+      ];
+
+      // Função que simula a "API"
+      function gerarConselho() {
+        const random = Math.floor(Math.random() * conselhos.length);
+        document.getElementById("conselho").innerText = conselhos[random];
+      }
+    </script>
+  </body>
+</html>
